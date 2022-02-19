@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		644C6C77DA2BB19F159AF5B2 /* Pods_MapOfRussia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C2481D73F83D38AFD52E44 /* Pods_MapOfRussia.framework */; };
+		F42463E027C0346300763DF4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42463DF27C0346300763DF4 /* MapViewModel.swift */; };
+		F491CFA127BF3922008AE6DD /* MapOfRussiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491CFA027BF3922008AE6DD /* MapOfRussiaApp.swift */; };
+		F491CFA327BF3922008AE6DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491CFA227BF3922008AE6DD /* ContentView.swift */; };
+		F491CFA527BF3924008AE6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F491CFA427BF3924008AE6DD /* Assets.xcassets */; };
+		F491CFA827BF3924008AE6DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F491CFA727BF3924008AE6DD /* Preview Assets.xcassets */; };
+		F491CFAF27BF397D008AE6DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491CFAE27BF397D008AE6DD /* MapView.swift */; };
+		F491E4FF27C16FDD00B27C03 /* Dark.json in Resources */ = {isa = PBXBuildFile; fileRef = F491E4FE27C16FDD00B27C03 /* Dark.json */; };
+		F4AA399A27BFEF16006E7E1A /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA399927BFEF16006E7E1A /* InputData.swift */; };
+		F4C1F33F27BF4C8B00C0514F /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1F33E27BF4C8B00C0514F /* GoogleMapView.swift */; };
+		F4FA505027C0E5DB005641C9 /* Features+GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA504F27C0E5DB005641C9 /* Features+GoogleMaps.swift */; };
+		F4FC130327C06B120048BB3E /* Features+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC130227C06B120048BB3E /* Features+MapKit.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6D7C4257E27C81BE3292FBB1 /* Pods-MapOfRussia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapOfRussia.debug.xcconfig"; path = "Target Support Files/Pods-MapOfRussia/Pods-MapOfRussia.debug.xcconfig"; sourceTree = "<group>"; };
+		70C2481D73F83D38AFD52E44 /* Pods_MapOfRussia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapOfRussia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A829737D653B7DAFFF35C02B /* Pods-MapOfRussia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapOfRussia.release.xcconfig"; path = "Target Support Files/Pods-MapOfRussia/Pods-MapOfRussia.release.xcconfig"; sourceTree = "<group>"; };
+		F42463DF27C0346300763DF4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		F491CF9D27BF3922008AE6DD /* MapOfRussia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapOfRussia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F491CFA027BF3922008AE6DD /* MapOfRussiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOfRussiaApp.swift; sourceTree = "<group>"; };
+		F491CFA227BF3922008AE6DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F491CFA427BF3924008AE6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F491CFA727BF3924008AE6DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F491CFAE27BF397D008AE6DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F491E4FE27C16FDD00B27C03 /* Dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Dark.json; sourceTree = "<group>"; };
+		F4AA399927BFEF16006E7E1A /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
+		F4C1F33E27BF4C8B00C0514F /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		F4FA504F27C0E5DB005641C9 /* Features+GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Features+GoogleMaps.swift"; sourceTree = "<group>"; };
+		F4FC130227C06B120048BB3E /* Features+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Features+MapKit.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F491CF9A27BF3922008AE6DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644C6C77DA2BB19F159AF5B2 /* Pods_MapOfRussia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3666A2CB8951610B6A5C07C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70C2481D73F83D38AFD52E44 /* Pods_MapOfRussia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		428C06408BC55D30F2B49992 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D7C4257E27C81BE3292FBB1 /* Pods-MapOfRussia.debug.xcconfig */,
+				A829737D653B7DAFFF35C02B /* Pods-MapOfRussia.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F42463DB27BFF6B600763DF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4AA399927BFEF16006E7E1A /* InputData.swift */,
+				F4FA504F27C0E5DB005641C9 /* Features+GoogleMaps.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F42463DD27C023BB00763DF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1F33E27BF4C8B00C0514F /* GoogleMapView.swift */,
+				F491CFA227BF3922008AE6DD /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F42463DE27C0345400763DF4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F42463DF27C0346300763DF4 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F491CF9427BF3922008AE6DD = {
+			isa = PBXGroup;
+			children = (
+				F491CF9F27BF3922008AE6DD /* MapOfRussia */,
+				F491CF9E27BF3922008AE6DD /* Products */,
+				428C06408BC55D30F2B49992 /* Pods */,
+				3666A2CB8951610B6A5C07C1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F491CF9E27BF3922008AE6DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F491CF9D27BF3922008AE6DD /* MapOfRussia.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F491CF9F27BF3922008AE6DD /* MapOfRussia */ = {
+			isa = PBXGroup;
+			children = (
+				F42463DB27BFF6B600763DF4 /* Model */,
+				F42463DE27C0345400763DF4 /* ViewModel */,
+				F42463DD27C023BB00763DF4 /* View */,
+				F491CFA027BF3922008AE6DD /* MapOfRussiaApp.swift */,
+				F491E4FE27C16FDD00B27C03 /* Dark.json */,
+				F491CFA427BF3924008AE6DD /* Assets.xcassets */,
+				F491CFA627BF3924008AE6DD /* Preview Content */,
+				F491E50027C1908700B27C03 /* Old */,
+			);
+			path = MapOfRussia;
+			sourceTree = "<group>";
+		};
+		F491CFA627BF3924008AE6DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F491CFA727BF3924008AE6DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F491E50027C1908700B27C03 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				F491E50127C1909C00B27C03 /* MapKitIntegration */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		F491E50127C1909C00B27C03 /* MapKitIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				F491CFAE27BF397D008AE6DD /* MapView.swift */,
+				F4FC130227C06B120048BB3E /* Features+MapKit.swift */,
+			);
+			path = MapKitIntegration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F491CF9C27BF3922008AE6DD /* MapOfRussia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F491CFAB27BF3924008AE6DD /* Build configuration list for PBXNativeTarget "MapOfRussia" */;
+			buildPhases = (
+				AA8E1C667BB05698F5F84D6E /* [CP] Check Pods Manifest.lock */,
+				F491CF9927BF3922008AE6DD /* Sources */,
+				F491CF9A27BF3922008AE6DD /* Frameworks */,
+				F491CF9B27BF3922008AE6DD /* Resources */,
+				4EB48824470D397F8505F690 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapOfRussia;
+			productName = MapOfRussia;
+			productReference = F491CF9D27BF3922008AE6DD /* MapOfRussia.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F491CF9527BF3922008AE6DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					F491CF9C27BF3922008AE6DD = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F491CF9827BF3922008AE6DD /* Build configuration list for PBXProject "MapOfRussia" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F491CF9427BF3922008AE6DD;
+			productRefGroup = F491CF9E27BF3922008AE6DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F491CF9C27BF3922008AE6DD /* MapOfRussia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F491CF9B27BF3922008AE6DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F491CFA827BF3924008AE6DD /* Preview Assets.xcassets in Resources */,
+				F491CFA527BF3924008AE6DD /* Assets.xcassets in Resources */,
+				F491E4FF27C16FDD00B27C03 /* Dark.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EB48824470D397F8505F690 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapOfRussia/Pods-MapOfRussia-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapOfRussia/Pods-MapOfRussia-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapOfRussia/Pods-MapOfRussia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA8E1C667BB05698F5F84D6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapOfRussia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F491CF9927BF3922008AE6DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FC130327C06B120048BB3E /* Features+MapKit.swift in Sources */,
+				F42463E027C0346300763DF4 /* MapViewModel.swift in Sources */,
+				F4C1F33F27BF4C8B00C0514F /* GoogleMapView.swift in Sources */,
+				F491CFA327BF3922008AE6DD /* ContentView.swift in Sources */,
+				F4AA399A27BFEF16006E7E1A /* InputData.swift in Sources */,
+				F491CFAF27BF397D008AE6DD /* MapView.swift in Sources */,
+				F4FA505027C0E5DB005641C9 /* Features+GoogleMaps.swift in Sources */,
+				F491CFA127BF3922008AE6DD /* MapOfRussiaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F491CFA927BF3924008AE6DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F491CFAA27BF3924008AE6DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F491CFAC27BF3924008AE6DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D7C4257E27C81BE3292FBB1 /* Pods-MapOfRussia.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapOfRussia/Preview Content\"";
+				DEVELOPMENT_TEAM = LHGQDA3AMG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.DarkAlone.MapOfRussia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F491CFAD27BF3924008AE6DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A829737D653B7DAFFF35C02B /* Pods-MapOfRussia.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MapOfRussia/Preview Content\"";
+				DEVELOPMENT_TEAM = LHGQDA3AMG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.DarkAlone.MapOfRussia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F491CF9827BF3922008AE6DD /* Build configuration list for PBXProject "MapOfRussia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F491CFA927BF3924008AE6DD /* Debug */,
+				F491CFAA27BF3924008AE6DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F491CFAB27BF3924008AE6DD /* Build configuration list for PBXNativeTarget "MapOfRussia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F491CFAC27BF3924008AE6DD /* Debug */,
+				F491CFAD27BF3924008AE6DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F491CF9527BF3922008AE6DD /* Project object */;
+}
