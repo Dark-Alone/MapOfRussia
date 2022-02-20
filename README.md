@@ -16,4 +16,4 @@ After that you should open MapOfRussia.xcworkspace, enter google maps api key in
 ### Features
 
 - tap on the highlited region to see the length of it borders
-- dark mode for maps and app
+- dark mode for map
