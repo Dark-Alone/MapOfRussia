@@ -14,6 +14,7 @@ struct GoogleMapView: UIViewRepresentable {
     
     @Environment(\.colorScheme) var colorScheme
     
+    // mapModel strores Polygones, selectedPolygone, tappedPoint
     @StateObject var mapModel = MapViewModel()
     
     func makeUIView(context: Context) -> GMSMapView {
@@ -21,9 +22,12 @@ struct GoogleMapView: UIViewRepresentable {
         // coordinator with GMSMapViewDelegate
         mapView.delegate = context.coordinator
         
-        // Support dark theme
+        // Moving camera to center of Russia
+        let camera = GMSCameraPosition.camera(withLatitude: 58.60945134188946, longitude: 44.77115694433451, zoom: 4)
+        mapView.camera = camera
+        
+        // Support dark theme *on launch
         if colorScheme == .dark {
-            print("change xd")
             guard let mapStyleURL = Bundle.main.url(forResource: "Dark", withExtension: "json") else { fatalError("There no Dark.json file in bundle") }
             mapView.mapStyle = try? GMSMapStyle(contentsOfFileURL: mapStyleURL)
         } else {
@@ -38,6 +42,7 @@ struct GoogleMapView: UIViewRepresentable {
         guard let features = features else { return }
         
         // preventing generate new polygons
+        // TODO: Polygon drawing optimizations
         if !mapModel.wasDrawed {
             print("generate paths")
             features.generatePaths()
@@ -66,11 +71,17 @@ struct GoogleMapView: UIViewRepresentable {
             
             // Generating image from text
             let text = "Border size" + (km > 0 ? " \(Int(km))km" : "") + (m > 0 ? String(format: " %.2fm", m) : "")
-            guard let image = makeImageFromText(text: text, size: CGSize(width: 700, height: 33)) else { return }
+            
+            // 20 - font
+            let textLength = CGFloat(text.count * 20)
+            guard let image = makeImageFromText(text: text, size: CGSize(width: textLength + 50, height: 33)) else { return }
+
             
             // Adding text overlay
-            let textOverlay = GMSGroundOverlay(position: selectedPosition, icon: image, zoomLevel: 5)
+            let zoomLevel = CGFloat(uiView.camera.zoom + 0.6)
+            let textOverlay = GMSGroundOverlay(position: selectedPosition, icon: image, zoomLevel: zoomLevel)
             textOverlay.map = uiView
+            
             
             mapModel.newTextOverlay(new: textOverlay)
         }
@@ -87,7 +98,7 @@ struct GoogleMapView: UIViewRepresentable {
         shadow.shadowBlurRadius = 3
         
         let textAttributes: [NSAttributedString.Key : Any] = [
-            .font: UIFont.systemFont(ofSize: 30, weight: .medium),
+            .font: UIFont.systemFont(ofSize: 20, weight: .medium),
             .foregroundColor: UIColor.white,
             .shadow: shadow
         ]
@@ -131,7 +142,6 @@ struct GoogleMapView: UIViewRepresentable {
             }
             
             if !didSelected {
-                // TODO: StrokeColor + FillColor
                 parent.mapModel.deselectPolygon()
             }
         }

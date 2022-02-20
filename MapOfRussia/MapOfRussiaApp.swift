@@ -12,7 +12,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let apiKey = "Enter your key here"
         
-        GMSServices.provideAPIKey("AIzaSyBUFYagAPmPUS9aJGQKfwTxlQrsp1HR658")
+        GMSServices.provideAPIKey(apiKey)
         
         return true
     }

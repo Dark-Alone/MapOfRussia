@@ -36,7 +36,7 @@ extension Features {
                 print("skip")
                 continue
             } else if i == 93 {
-                // TODO: добавляем к 93 91
+                // добавляем к 93 91
                 // состыковка 71.53668798799998 64 93 (вырезая 62, 63)
                 // состыковка 71.517523505 56 91 (вырезая 0, 1)
                 // вырезаем координаты, чтобы не было линии посередине острова Врангеля
@@ -57,7 +57,7 @@ extension Features {
                     path.add(coordinate)
                 }
             } else if i == 159 {
-                // TODO: добавляем к 159 67
+                // добавляем к 159 67
                 // аналогично состыковка и вырез
                 let rawCoordinates67 = polygonsCoordinates[67][0]
                 let rawCoordinates159 = polygonsCoordinates[159][0]

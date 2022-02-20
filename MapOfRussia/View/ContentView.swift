@@ -22,6 +22,7 @@ struct ContentView: View {
     
     @State var successState: Bool = false
     
+    // TODO: Make matchedGeometryEffect animation correctly
     var body: some View {
         GoogleMapView(features: $features)
             .ignoresSafeArea()
@@ -51,25 +52,26 @@ struct ContentView: View {
                         Text("Load success")
                     }
                 }
+                .matchedGeometryEffect(id: "loadingView", in: animation)
                .foregroundColor(.white)
                 // Custom View background
                .padding(5)
                .background(
-                   ZStack {
-                       RoundedRectangle(cornerRadius: 5)
-                           .fill(successState ? Color("Success") : (loadingState == .error ? Color.red : Color.purple))
-                           .animation(.default, value: successState)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(successState ? Color("Success") : (loadingState == .error ? Color.red : Color.purple))
+                            .animation(.default, value: successState)
                            
-                       RoundedRectangle(cornerRadius: 5)
-                           .strokeBorder(.white, lineWidth: 2)
-                   }
-                       .opacity(0.3)
+                        RoundedRectangle(cornerRadius: 5)
+                            .strokeBorder(.white, lineWidth: 2)
+                    }
+                    .matchedGeometryEffect(id: "overlayBackground", in: animation)
+                    .opacity(0.5)
                )
                .padding()
                // View with overlay opacity animation
                .opacity(successState ? 0 : 1)
                 // View with overlay resize animation
-               .matchedGeometryEffect(id: "loadingView", in: animation)
                .animation(.default, value: loadingState),
                 
                 alignment: .bottomTrailing)
@@ -100,7 +102,7 @@ struct ContentView: View {
                         self.loadingState = .success
                         
                         // make animation more controllable
-                        withAnimation(.default.delay(3).speed(0.3)) {
+                        withAnimation(.default.delay(3)) {
                             self.successState = true
                         }
                     } catch {

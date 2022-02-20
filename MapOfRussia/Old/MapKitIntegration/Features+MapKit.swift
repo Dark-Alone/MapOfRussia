@@ -33,7 +33,6 @@ extension Features {
             
             return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
-        let difference = maxLongitude - minLongitude
         
         
 //        if difference > 150 {
