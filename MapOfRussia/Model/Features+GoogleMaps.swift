@@ -29,11 +29,9 @@ extension Features {
             // for prevent repeat same code
             let path = GMSMutablePath()
             
-            print("index: \(i)")
             if i == 67 || i == 91 {
                 // пропускаем, потому что массивы с индексами 67 и 91 будут соединены с массивами индексов 159 и 93 соответственно
                 // для правильной отрисовки за 180 меридианом
-                print("skip")
                 continue
             } else if i == 93 {
                 // добавляем к 93 91
@@ -76,9 +74,6 @@ extension Features {
                 for coordinate in concatinatedCoordinates {
                     path.add(coordinate)
                 }
-                
-                print("count159 \(count159)")
-                print("count67  \(count67)")
             } else {
                 for polygonCoordinates in polygonsCoordinates[i][0] {
                     path.add(polygonCoordinates)

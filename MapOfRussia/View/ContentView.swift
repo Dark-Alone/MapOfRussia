@@ -22,6 +22,8 @@ struct ContentView: View {
     
     @State var successState: Bool = false
     
+    @StateObject var mapModel = MapViewModel()
+    
     // TODO: Make matchedGeometryEffect animation correctly
     var body: some View {
         GoogleMapView(features: $features)
@@ -75,6 +77,27 @@ struct ContentView: View {
                .animation(.default, value: loadingState),
                 
                 alignment: .bottomTrailing)
+        
+            // overlay polygon length
+            .overlay(
+                Text(mapModel.calculateBorderLength())
+                    .foregroundColor(.white)
+                    .frame(width: 220)
+                    .padding(5)
+                    .background(
+                        ZStack {
+                            Color.pink
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                        }
+                    )
+                    .padding()
+                    .opacity(mapModel.isSelectedPolygon ? 1 : 0)
+                    // TODO: when polygon selected animation incorrect
+                    .animation(.default, value: mapModel.isSelectedPolygon),
+                alignment: .bottom
+            )
+        
+            .environmentObject(mapModel)
     }
     
     // performs onAppear MapView

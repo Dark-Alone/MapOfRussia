@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				F42463DB27BFF6B600763DF4 /* Model */,
-				F42463DE27C0345400763DF4 /* ViewModel */,
 				F42463DD27C023BB00763DF4 /* View */,
+				F42463DE27C0345400763DF4 /* ViewModel */,
 				F491CFA027BF3922008AE6DD /* MapOfRussiaApp.swift */,
 				F491E4FE27C16FDD00B27C03 /* Dark.json */,
 				F491CFA427BF3924008AE6DD /* Assets.xcassets */,

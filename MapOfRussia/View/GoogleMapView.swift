@@ -15,7 +15,9 @@ struct GoogleMapView: UIViewRepresentable {
     @Environment(\.colorScheme) var colorScheme
     
     // mapModel strores Polygones, selectedPolygone, tappedPoint
-    @StateObject var mapModel = MapViewModel()
+    @EnvironmentObject var mapModel: MapViewModel
+    
+    
     
     func makeUIView(context: Context) -> GMSMapView {
         let mapView = GMSMapView()
@@ -42,7 +44,6 @@ struct GoogleMapView: UIViewRepresentable {
         guard let features = features else { return }
         
         // preventing generate new polygons
-        // TODO: Polygon drawing optimizations
         if !mapModel.wasDrawed {
             print("generate paths")
             features.generatePaths()
@@ -51,65 +52,14 @@ struct GoogleMapView: UIViewRepresentable {
                     polygon.strokeColor = UIColor(named: "StrokeColor")
                     polygon.fillColor = UIColor(named: "FillColor")
                     polygon.map = uiView
+                    
+                    polygon.isTappable = true
 
                     mapModel.polygons.append(polygon)
                 }
             
             mapModel.wasDrawed = true
         }
-        
-        // drawing text of border length of current tap position
-        if let selectedPolygone = mapModel.selectedPolygon, let selectedPosition = mapModel.selectedPosition {
-            // TODO: Make overlay always visible on tap
-            print("draw overlay")
-            // calculating border length km's and meters
-            guard let path = selectedPolygone.path else { return }
-            let polygonBorderLength = path.length(of: .geodesic).binade
-            
-            let km = Int(polygonBorderLength) / 1000
-            let m = polygonBorderLength.binade - Double(km) * 1000
-            
-            // Generating image from text
-            let text = "Border size" + (km > 0 ? " \(Int(km))km" : "") + (m > 0 ? String(format: " %.2fm", m) : "")
-            
-            // 20 - font
-            let textLength = CGFloat(text.count * 20)
-            guard let image = makeImageFromText(text: text, size: CGSize(width: textLength + 50, height: 33)) else { return }
-
-            
-            // Adding text overlay
-            let zoomLevel = CGFloat(uiView.camera.zoom + 0.6)
-            let textOverlay = GMSGroundOverlay(position: selectedPosition, icon: image, zoomLevel: zoomLevel)
-            textOverlay.map = uiView
-            
-            
-            mapModel.newTextOverlay(new: textOverlay)
-        }
-    }
-    
-    // Making border length text overlaying map
-    func makeImageFromText(text: String, size: CGSize) -> UIImage? {
-        let data = text.data(using: .utf8, allowLossyConversion: true)
-        let drawText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        
-        // Shadow for text
-        let shadow = NSShadow()
-        shadow.shadowColor = UIColor(white: 0.45, alpha: 0.9)
-        shadow.shadowBlurRadius = 3
-        
-        let textAttributes: [NSAttributedString.Key : Any] = [
-            .font: UIFont.systemFont(ofSize: 20, weight: .medium),
-            .foregroundColor: UIColor.white,
-            .shadow: shadow
-        ]
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        drawText?.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), withAttributes: textAttributes)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
     }
     
     func makeCoordinator() -> Coordinator {
@@ -120,30 +70,20 @@ struct GoogleMapView: UIViewRepresentable {
     class Coordinator: NSObject, GMSMapViewDelegate {
         var parent: GoogleMapView
         
+        // calls when tap outside of polygons
         func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-            var didSelected = false
-            
             print("tap at \(coordinate)")
-            
-            for polygon in parent.mapModel.polygons {
-                if GMSGeometryContainsLocation(coordinate, polygon.path!, true) {
-                    didSelected = true
-                    UIView.animate(withDuration: 0.5) {
-                        self.parent.mapModel.selectPolygon(polygon: polygon)
-                    }
-                    
-                    // For drawing border length on map (calls in updateUIView)
-                    self.parent.mapModel.selectedPosition = coordinate
-                    
-                    
-                    // for optimization purpose, leave loop
-                    return
-                }
+            parent.mapModel.selectedPosition = coordinate
+            self.parent.mapModel.deselectPolygon()
+        }
+        
+        func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
+            if let polygon = overlay as? GMSPolygon {
+                // TODO: Notification with location length
+                self.parent.mapModel.selectPolygon(polygon: polygon)
             }
             
-            if !didSelected {
-                parent.mapModel.deselectPolygon()
-            }
+            print("tap")
         }
         
         init(_ parent: GoogleMapView) {
