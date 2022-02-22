@@ -19,5 +19,5 @@ And launch the app in the simulator or on the device.
 - SwiftUI interface
 - getting data from the server
 - parsing JSON from the data
-- tap on the highlited region to see the length of it borders
+- tap on the hightlited region to see the length of it borders
 - dark mode for map
