@@ -18,6 +18,6 @@ And launch the app in the simulator or on the device.
 
 - SwiftUI interface
 - getting data from the server
-- parsing JSON from the data
+- parsing JSON from the data with Codable
 - tap on the hightlited region to see the length of it borders
 - dark mode for map
