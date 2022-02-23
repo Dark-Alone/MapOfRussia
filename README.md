@@ -17,6 +17,7 @@ And launch the app in the simulator or on the device.
 ### Features
 
 - SwiftUI interface
+- MVVM
 - getting data from the server
 - parsing JSON from the data with Codable
 - tap on the hightlited region to see the length of it borders
