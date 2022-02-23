@@ -9,28 +9,20 @@ import SwiftUI
 import GoogleMaps
 
 class MapViewModel: ObservableObject {
-    var polylines = [GMSPolyline]()
     var polygons = [GMSPolygon]()
     
     @Published var selectedPolygon: GMSPolygon?
     @Published var selectedPosition: CLLocationCoordinate2D?
-//    var textOverlay: GMSGroundOverlay?
     
     // variable to prevent generating new polygons when view updates
     @Published var wasDrawed = false
     
-    // variable for animation border length overlay
-    var isSelectedPolygon: Bool {
-        // if polygon and path exists -> showing overlay
-        guard let _ = selectedPolygon?.path else { return false }
-        
-        // if selectedPosition exists -> not showing overlay
-        guard let _ = selectedPosition else {
-            print("selected position not exists")
-            return true
-        }
-
-        return false
+    // variable for animation border length text overlay
+    @Published var isPolygonSelected: Bool = false
+    @Published var calculatedBorderLength = ""
+    
+    func selectPosition(position: CLLocationCoordinate2D) {
+        self.selectedPosition = position
     }
     
     // Performs when tap on new polygone
@@ -40,19 +32,28 @@ class MapViewModel: ObservableObject {
         selectedPolygon = polygon
         // deselect position for selectedPositionInSelectedPolygon
         selectedPosition = nil
+        
+        selectNewPolygon()
     }
 
     // Performs when tap outside old polygone
     func deselectPolygon() {
         selectedPolygon?.fillColor = UIColor(named: "FillColor")
         selectedPolygon = nil
+        selectNewPolygon()
     }
     
     // calculation every time when selected polygon changes
-    func calculateBorderLength() -> String {
-        guard let selectedPolygon = selectedPolygon else { return "" }
+    func calculateBorderLength() {
+        guard let selectedPolygon = selectedPolygon else {
+            calculatedBorderLength = ""
+            return
+        }
         
-        guard let path = selectedPolygon.path else { return "" }
+        guard let path = selectedPolygon.path else {
+            calculatedBorderLength = ""
+            return
+        }
         
         let length = path.length(of: .geodesic).binade
         
@@ -61,6 +62,25 @@ class MapViewModel: ObservableObject {
         
         let text = "Border size" + (km > 0 ? " \(km)km" : "") + (m > 0 ? " \(m)m" : "")
         
-        return text
+        calculatedBorderLength = text
+    }
+    
+    func selectNewPolygon() {
+        // if polygon and path exists -> showing overlay
+        guard let _ = selectedPolygon?.path else {
+            self.isPolygonSelected = false
+            return
+        }
+        
+        // if selectedPosition exists -> not showing overlay
+        guard let _ = selectedPosition else {
+            print("selected position not exists")
+            self.isPolygonSelected = true
+            
+            self.calculateBorderLength()
+            return
+        }
+
+        self.isPolygonSelected = false
     }
 }

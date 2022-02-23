@@ -17,6 +17,7 @@
 		F491E4FF27C16FDD00B27C03 /* Dark.json in Resources */ = {isa = PBXBuildFile; fileRef = F491E4FE27C16FDD00B27C03 /* Dark.json */; };
 		F4AA399A27BFEF16006E7E1A /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA399927BFEF16006E7E1A /* InputData.swift */; };
 		F4C1F33F27BF4C8B00C0514F /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1F33E27BF4C8B00C0514F /* GoogleMapView.swift */; };
+		F4CBE29A27C67B4D009DB864 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CBE29927C67B4D009DB864 /* ContentViewModel.swift */; };
 		F4FA505027C0E5DB005641C9 /* Features+GoogleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA504F27C0E5DB005641C9 /* Features+GoogleMaps.swift */; };
 		F4FC130327C06B120048BB3E /* Features+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC130227C06B120048BB3E /* Features+MapKit.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		F491E4FE27C16FDD00B27C03 /* Dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Dark.json; sourceTree = "<group>"; };
 		F4AA399927BFEF16006E7E1A /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
 		F4C1F33E27BF4C8B00C0514F /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		F4CBE29927C67B4D009DB864 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		F4FA504F27C0E5DB005641C9 /* Features+GoogleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Features+GoogleMaps.swift"; sourceTree = "<group>"; };
 		F4FC130227C06B120048BB3E /* Features+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Features+MapKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F42463DF27C0346300763DF4 /* MapViewModel.swift */,
+				F4CBE29927C67B4D009DB864 /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				F491CFA327BF3922008AE6DD /* ContentView.swift in Sources */,
 				F4AA399A27BFEF16006E7E1A /* InputData.swift in Sources */,
 				F491CFAF27BF397D008AE6DD /* MapView.swift in Sources */,
+				F4CBE29A27C67B4D009DB864 /* ContentViewModel.swift in Sources */,
 				F4FA505027C0E5DB005641C9 /* Features+GoogleMaps.swift in Sources */,
 				F491CFA127BF3922008AE6DD /* MapOfRussiaApp.swift in Sources */,
 			);

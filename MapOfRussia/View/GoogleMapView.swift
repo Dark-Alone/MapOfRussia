@@ -44,6 +44,7 @@ struct GoogleMapView: UIViewRepresentable {
         guard let features = features else { return }
         
         // preventing generate new polygons
+        // TODO: Update for MVVM
         if !mapModel.wasDrawed {
             print("generate paths")
             features.generatePaths()
@@ -73,8 +74,8 @@ struct GoogleMapView: UIViewRepresentable {
         // calls when tap outside of polygons
         func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
             print("tap at \(coordinate)")
-            parent.mapModel.selectedPosition = coordinate
-            self.parent.mapModel.deselectPolygon()
+            parent.mapModel.selectPosition(position: coordinate)
+            parent.mapModel.deselectPolygon()
         }
         
         func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
